@@ -3,6 +3,8 @@ package com.projectspring.api.Models;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import com.projectspring.api.Generic.BaseEntity;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,11 +23,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @Entity
 @Table(name = "users")
-public class UserEntities {
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+public class UserEntities extends BaseEntity {
 
   @Column(name = "username")
   private String username;
