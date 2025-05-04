@@ -18,7 +18,7 @@ public abstract class GenericController<D extends BaseDto, S extends GenericServ
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<D> getById(@PathVariable long id) {
+    public ResponseEntity<D> getById(@PathVariable int id) {
         return ResponseEntity.of(service.findById(id));
     }
 
@@ -30,7 +30,7 @@ public abstract class GenericController<D extends BaseDto, S extends GenericServ
     }
 
     @DeleteMapping("{id}")
-    public void deleteById(@PathVariable long id) {
+    public void deleteById(@PathVariable int id) {
         service.deleteById(id);
     }
 }

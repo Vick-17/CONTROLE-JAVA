@@ -8,9 +8,9 @@ import java.util.Optional;
 public interface GenericService<D extends BaseDto> {
     Page<D> findAll(Pageable pageable);
 
-    Optional<D> findById(long id);
+    Optional<D> findById(int id);
 
     D saveOrUpdate(D entity);
 
-    void deleteById(long id);
+    void deleteById(int id);
 }

@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 import java.util.Optional;
 
 @RequiredArgsConstructor
-public abstract class GenericServiceImpl<E extends BaseEntity, D extends BaseDto, R extends JpaRepository<E, Long>, M extends GenericMapper<D, E>>
+public abstract class GenericServiceImpl<E extends BaseEntity, D extends BaseDto, R extends JpaRepository<E, Integer>, M extends GenericMapper<D, E>>
         implements GenericService<D> {
 
     protected final R repository;
@@ -26,12 +26,12 @@ public abstract class GenericServiceImpl<E extends BaseEntity, D extends BaseDto
     }
 
     @Override
-    public Optional<D> findById(long id) {
+    public Optional<D> findById(int id) {
         return repository.findById(id).map(this::toDto);
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(int id) {
         repository.deleteById(id);
     }
 
